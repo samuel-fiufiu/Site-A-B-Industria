@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const plusJakartaSans = Plus_Jakarta_Sans({
+	variable: "--font-plus-jakarta",
 	subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
+const manrope = Manrope({
+	variable: "--font-manrope-display",
 	subsets: ["latin"],
 });
 
@@ -27,7 +27,7 @@ export default function RootLayout({
 			<head>
 				<link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
 			</head>
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+			<body className={`${plusJakartaSans.variable} ${manrope.variable} antialiased`}>{children}</body>
 		</html>
 	);
 }
