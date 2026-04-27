@@ -88,6 +88,43 @@
   .header nav:has(a:nth-child(4):hover),
   .header nav:has(a:nth-child(4).active) { --underline-left: 65%; --underline-width: 12%; --underline-opacity: 1; }
 
+  .animate-nav {
+    --indicator-left: 0px;
+    --indicator-width: 0px;
+    --indicator-opacity: 0;
+  }
+
+  .animate-nav a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.65rem 0.9rem;
+    color: #6b7280;
+    transition: color 0.25s ease;
+  }
+
+  .animate-nav a:hover,
+  .animate-nav a.active {
+    color: var(--foreground);
+  }
+
+  .animate-nav .nav-indicator {
+    position: absolute;
+    left: var(--indicator-left);
+    bottom: 0;
+    width: var(--indicator-width);
+    height: 3px;
+    opacity: var(--indicator-opacity);
+    border-radius: 999px;
+    background: var(--soft-blue);
+    transition:
+      left 0.28s ease,
+      width 0.28s ease,
+      opacity 0.2s ease;
+    pointer-events: none;
+  }
+
   .button-1 {
     background: linear-gradient(to left bottom, var(--soft-blue), var(--dark-blue));
     color: var(--white);
