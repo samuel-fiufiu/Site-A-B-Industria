@@ -1,45 +1,92 @@
-# OpenNext Starter
-This is a [Next.js](https://nextjs.org) project configured for [OpenNext Cloudflare](https://opennext.js.org/cloudflare).
+# Site A&B Indústria
 
-## Getting Started
+Landing page institucional desenvolvida com Next.js para apresentar a operação de envase da A&B Indústria, com foco em estrutura industrial, formatos disponíveis, benefícios, jornada operacional e contato comercial.
 
-Read the documentation at https://opennext.js.org/cloudflare.
+## Stack
 
-## Develop
+- `Next.js 16`
+- `React 19`
+- `TypeScript`
+- `Tailwind CSS 4`
+- `OpenNext + Cloudflare`
+- `Lucide React`
 
-Run the Next.js development server:
+## Estrutura
+
+O projeto está organizado em componentes de seção dentro de `src/components`:
+
+- `header.tsx`
+- `heroSection.tsx`
+- `institutionalSection.tsx`
+- `formatSection.tsx`
+- `benefitsSection.tsx`
+- `targetSection.tsx`
+- `processSection.tsx`
+- `ctaSection.tsx`
+- `footer.tsx`
+
+A composição principal da página fica em `src/app/page.tsx`.
+
+## Como rodar localmente
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or similar package manager command
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra `http://localhost:3000`.
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-## Preview
-
-Preview the application locally on the Cloudflare runtime:
-
-```bash
-npm run preview
-# or similar package manager command
-```
+- `npm run dev`: inicia o ambiente local com Next.js
+- `npm run build`: gera o build de produção
+- `npm run start`: sobe a aplicação já buildada
+- `npm run preview`: faz preview local no runtime da Cloudflare
+- `npm run deploy`: publica com OpenNext na Cloudflare
+- `npm run upload`: gera e envia o bundle
+- `npm run cf-typegen`: atualiza os tipos do ambiente Cloudflare
 
 ## Deploy
 
-Deploy the application to Cloudflare:
+O projeto está preparado para deploy com OpenNext na Cloudflare.
+
+Build de produção:
+
+```bash
+npm run build
+```
+
+Preview local no ambiente Cloudflare:
+
+```bash
+npm run preview
+```
+
+Deploy:
 
 ```bash
 npm run deploy
-# or similar package manager command
 ```
 
-## Learn More
+## Estilo e UI
 
-Useful references for this stack:
+- As variáveis globais de cor e utilidades base ficam em `src/app/globals.css`
+- As fontes principais usadas no projeto são `Plus Jakarta Sans` e `Manrope`
+- O botão principal reutilizável usa a classe `.button-1`
+- A navegação do header possui indicador animado por seção ativa e hover
 
-- [OpenNext for Cloudflare](https://opennext.js.org/cloudflare)
-- [Cloudflare Workers docs](https://developers.cloudflare.com/workers/)
-- [Next.js Documentation](https://nextjs.org/docs)
+## Assets
+
+Os arquivos visuais do projeto ficam em `public/Images` e `public/Logo.svg`.
+
+## Observações
+
+- O projeto usa `initOpenNextCloudflareForDev()` em `next.config.ts` para permitir bindings da Cloudflare durante o desenvolvimento
+- A navegação entre seções usa âncoras com `scroll-behavior: smooth`
