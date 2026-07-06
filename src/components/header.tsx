@@ -125,7 +125,7 @@ export function Header() {
         <span aria-hidden="true" className="nav-indicator" />
       </nav>
 
-      <a href="#contato" onClick={handleNavigation("contato")} className="button-1">
+      <a href="https://wa.me/556299800313" target="_blank" rel="noopener noreferrer" className="button-1">
         Falar com o Comercial
       </a>
     </header>

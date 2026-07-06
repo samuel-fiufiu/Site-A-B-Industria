@@ -11,12 +11,12 @@ export function Cta() {
               Nossa fábrica está pronta para absorver sua demanda com o máximo rigor técnico e
               eficiência operacional.
             </p>
-            <a href="#contato" className="button-1 !justify-self-auto !px-12 !py-5 !text-[1.05rem] !font-semibold md:!text-[1.25rem]">
+            <a href="https://wa.me/556299800313" className="button-1 !justify-self-auto !px-12 !py-5 !text-[1.05rem] !font-semibold md:!text-[1.25rem]">
               Falar com o comercial
             </a>
           </div>
         </div>
-      </div>
+      </div>  
     </section>
   );
 }

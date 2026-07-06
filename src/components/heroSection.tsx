@@ -9,7 +9,7 @@ export function Hero() {
         <h1 className="font-bold text-7xl font-jakarta">Sua bebida pronta para ganhar escala com um <span className="text-[var(--soft-blue)]">envase parceiro</span></h1>
         <p className="font-manrope text-lg font-semilight">Focamos na excelência operacional para marcas com produtos definidos que buscam estrutura industrial de ponta, agilidade e segurança em cada lote.</p>
         <div className="gap-4 flex">
-          <a href="#contato" className="button-1">Falar com o Comercial</a>
+          <a href="https://wa.me/556299800313" className="button-1">Falar com o Comercial</a>
           <a href="#formatos" className="button-2">Conhecer Formatos</a>
         </div>
       </div>
