@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import Industry from "/Images/Industrial Bottling Line.png";
-import Bottle from "/Images/750ml.png";
+import Delivery from "/Images/Delivery.jpg";
+import Machine from "/Images/industrial machine.jpg";
 
 const targets = [
   {
@@ -32,10 +32,10 @@ export function Target() {
           <article className="relative min-h-[280px] overflow-hidden rounded-[2rem] bg-[#080808] shadow-[0_18px_50px_rgba(0,0,0,0.14)] md:min-h-[350px]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.14),transparent_58%)]" />
             <Image
-              src={Industry}
+              src={Delivery}
               alt="Linha industrial de envase"
               fill
-              className="object-contain p-8"
+              className="object-cover"
             />
             <div className="absolute inset-0 rounded-[2rem] ring-1 ring-white/6" />
           </article>
@@ -55,20 +55,11 @@ export function Target() {
           <article className="relative min-h-[280px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_center,#113F52_0%,#0A1E2B_48%,#071118_100%)] shadow-[0_18px_50px_rgba(0,0,0,0.14)] md:min-h-[350px]">
             <div className="absolute inset-x-0 top-[18%] mx-auto h-32 w-32 rounded-full bg-[#4FDBFF]/30 blur-2xl md:h-40 md:w-40" />
             <Image
-              src={Bottle}
-              alt="Garrafa para produção escalável"
+              src={Machine}
+              alt="Máquina industrial para produção escalável"
               fill
-              className="object-contain p-10 pb-24"
+              className="object-cover"
             />
-            <div className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-1 text-center">
-              <span className="font-jakarta text-[1.05rem] font-semibold tracking-[0.12em] text-[#24B9E5] md:text-[1.35rem]">
-                DISTRIBUIDORES
-              </span>
-              <span className="font-jakarta text-[1.5rem] font-extrabold leading-none text-[#1399C9] md:text-[2.1rem]">
-                "SAFE WORK"
-              </span>
-            </div>
-            <div className="absolute inset-0 rounded-[2rem] ring-1 ring-white/8" />
           </article>
         </div>
 

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { CircleCheck as Check } from "lucide-react";
 
-import image275ml from "/Images/275ml.png";
-import image750ml from "/Images/750ml.png";
+import image275ml from "/Images/275ml.jpg";
+import image750ml from "/Images/750ml.jpg";
 
 const Formats = [
   {
@@ -33,7 +33,7 @@ export function Format() {
           {Formats.map((format, index) => (
             <div
               key={index}
-              className="grid grid-cols-[220px_1fr] items-center gap-6 rounded-[24px] bg-white shadow-sm"
+              className="grid grid-cols-[220px_1fr] items-center gap-6 rounded-[24px] bg-white shadow-sm border border-[#ECE5E1]"
             >
               <div className="flex justify-center">
                 <Image
