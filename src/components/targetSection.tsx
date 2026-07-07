@@ -26,9 +26,9 @@ const targets = [
 
 export function Target() {
   return (
-    <section className="bg-white px-4 py-18">
-      <div className="mx-auto grid max-w-[1540px] gap-10 xl:grid-cols-[720px_1fr] xl:items-start">
-        <div className="grid gap-4 md:grid-cols-2">
+    <section className="bg-white px-4 py-12 md:py-18">
+      <div className="mx-auto grid max-w-[1540px] gap-10 lg:grid-cols-1 xl:grid-cols-[720px_1fr] xl:items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <article className="relative min-h-[280px] overflow-hidden rounded-[2rem] bg-[#080808] shadow-[0_18px_50px_rgba(0,0,0,0.14)] md:min-h-[350px]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.14),transparent_58%)]" />
             <Image
@@ -63,29 +63,29 @@ export function Target() {
           </article>
         </div>
 
-        <div className="flex flex-col gap-10 xl:pl-12">
-          <h1 className="max-w-[560px] font-jakarta text-4xl font-bold leading-tight text-[var(--foreground)] md:text-6xl">
+        <div className="flex flex-col gap-8 md:gap-10 xl:pl-12">
+          <h1 className="max-w-[560px] font-jakarta text-3xl sm:text-4xl font-bold leading-tight text-[var(--foreground)] md:text-6xl">
             Para quem envasamos
           </h1>
 
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-8 md:gap-12">
             {targets.map((target) => (
               <article
                 key={target.id}
-                className="grid gap-3 md:grid-cols-[74px_1fr] md:gap-6"
+                className="grid gap-2 md:gap-3 md:grid-cols-[74px_1fr] md:gap-6"
               >
                 <span
-                  className="font-jakarta text-3xl font-bold leading-none md:text-5xl"
+                  className="font-jakarta text-2xl md:text-3xl font-bold leading-none md:text-5xl"
                   style={{ color: target.color }}
                 >
                   {String(target.id).padStart(2, "0")}
                 </span>
 
-                <div className="flex flex-col gap-3">
-                  <h2 className="font-jakarta text-2xl font-bold text-[var(--foreground)] md:text-4xl">
+                <div className="flex flex-col gap-2 md:gap-3">
+                  <h2 className="font-jakarta text-xl md:text-2xl font-bold text-[var(--foreground)] md:text-4xl">
                     {target.title}
                   </h2>
-                  <p className="max-w-[720px] font-manrope text-lg font-light leading-9 text-[var(--dark-soft-blue)] md:text-[clamp(1.1rem,1.2vw,1.35rem)] md:leading-[1.55]">
+                  <p className="max-w-[720px] font-manrope text-base md:text-lg font-light leading-7 md:leading-9 text-[var(--dark-soft-blue)] md:text-[clamp(1.1rem,1.2vw,1.35rem)] md:leading-[1.55]">
                     {target.description}
                   </p>
                 </div>

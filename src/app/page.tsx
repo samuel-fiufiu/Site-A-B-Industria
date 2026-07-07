@@ -5,6 +5,7 @@ import { Format } from "@/components/formatSection";
 import { Benefits } from "@/components/benefitsSection";
 import { Target } from "@/components/targetSection";
 import { Process } from "@/components/processSection";
+import { Location } from "@/components/locationSection";
 import { Cta } from "@/components/ctaSection";
 import { Footer } from "@/components/footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
 				<Benefits/>
 				<Target/>
 				<Process/>
+				<Location/>
 				<Cta/>
 			</main>
 

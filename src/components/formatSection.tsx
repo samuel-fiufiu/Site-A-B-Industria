@@ -23,28 +23,28 @@ const Formats = [
 
 export function Format() {
   return (
-    <section id="formatos" className="bg-[var(--light-gray)] py-8">
-      <div className=" max-w-[1540px] flex flex-col mx-auto gap-8 items-start">
-        <h1 className="font-jakarta text-5xl font-bold">Formatos de Envase</h1>
-        <p className="font-manrope text-lg font-semilight">
+    <section id="formatos" className="scroll-mt-[88px] md:scroll-mt-[92px] bg-[var(--light-gray)] px-4 py-8">
+      <div className="max-w-[1540px] flex flex-col mx-auto gap-6 md:gap-8 items-start">
+        <h1 className="font-jakarta text-3xl sm:text-4xl md:text-5xl font-bold">Formatos de Envase</h1>
+        <p className="font-manrope text-base md:text-lg font-semilight">
           Estrutura preparada para diferentes volumetrias e especificidades de produto.
         </p>
-        <div className="grid w-full grid-cols-2 gap-6 justify-center">
+        <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-6 justify-center">
           {Formats.map((format, index) => (
             <div
               key={index}
-              className="grid grid-cols-[220px_1fr] items-center gap-6 rounded-[24px] bg-white shadow-sm border border-[#ECE5E1]"
+              className="grid grid-cols-1 sm:grid-cols-[180px_1fr] md:grid-cols-[220px_1fr] items-start sm:items-center gap-4 md:gap-6 rounded-[24px] bg-white shadow-sm border border-[#ECE5E1] p-4 sm:p-0"
             >
               <div className="flex justify-center">
                 <Image
                   src={format.Image}
                   alt={`Garrafa formato ${format.Volume}`}
-                  className="h-auto max-h-[320px] w-auto object-contain rounded-l-[24px]"
+                  className="h-auto max-h-[200px] sm:max-h-[320px] w-auto object-contain sm:rounded-l-[24px]"
                 />
               </div>
 
-              <div className="flex flex-col gap-4">
-                <h2 className="font-jakarta text-3xl font-bold text-[var(--dark-blue)]">
+              <div className="flex flex-col gap-3 md:gap-4">
+                <h2 className="font-jakarta text-2xl md:text-3xl font-bold text-[var(--dark-blue)]">
                   Volume {format.Volume}
                 </h2>
 
@@ -59,7 +59,7 @@ export function Format() {
                   ))}
                 </div>
 
-                <p className="font-manrope text-base text-[var(--dark-blue)]">{format.Text}</p>
+                <p className="font-manrope text-sm md:text-base text-[var(--dark-blue)]">{format.Text}</p>
 
                 <div className="flex flex-col gap-2">
                   {format.infos.map((info, infoIndex) => (
@@ -67,8 +67,8 @@ export function Format() {
                       key={infoIndex}
                       className="flex items-center gap-2 text-[var(--dark-blue)]"
                     >
-                      <Check className="size-5 text-[var(--soft-blue)]" />
-                      <p className="font-manrope text-base">{info}</p>
+                      <Check className="size-4 md:size-5 text-[var(--soft-blue)]" />
+                      <p className="font-manrope text-sm md:text-base">{info}</p>
                     </div>
                   ))}
                 </div>

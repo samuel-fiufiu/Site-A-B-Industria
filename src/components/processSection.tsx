@@ -34,22 +34,22 @@ export function Process() {
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
   return (
-    <section id="processo" className="bg-[var(--soft-white)] px-4 py-18">
-      <div className="mx-auto flex max-w-[1540px] flex-col items-center gap-10">
-        <h2 className="text-center font-jakarta text-4xl font-bold text-[var(--foreground)] md:text-5xl">
+    <section id="processo" className="scroll-mt-[88px] md:scroll-mt-[92px] bg-[var(--soft-white)] px-4 py-12 md:py-18">
+      <div className="mx-auto flex max-w-[1540px] flex-col items-center gap-8 md:gap-10">
+        <h2 className="text-center font-jakarta text-3xl sm:text-4xl font-bold text-[var(--foreground)] md:text-5xl">
           Jornada Operacional
         </h2>
 
         <div className="w-full overflow-x-auto pb-4">
-          <div className="flex min-w-max items-stretch gap-0 px-1 xl:min-w-0 xl:justify-center">
+          <div className="flex items-stretch gap-0 px-1 lg:justify-center">
             {cards.map((card, index) => {
               const isActive = activeStep === card.id;
               const connectorIsActive = activeStep !== null && card.id >= activeStep;
 
               return (
-                <div key={card.id} className="flex items-center">
+                <div key={card.id} className="flex items-center shrink-0">
                   <article
-                    className={`flex min-h-[250px] w-[220px] flex-col gap-5 rounded-[1.75rem] bg-white px-7 py-8 transition-all duration-300 xl:w-[228px] ${
+                    className={`flex min-h-[230px] w-[200px] flex-col gap-4 rounded-[1.75rem] bg-white px-5 py-6 transition-all duration-300 sm:w-[220px] sm:px-7 sm:py-8 xl:w-[228px] ${
                       isActive
                         ? "border border-[#C9CED1] shadow-[0_10px_24px_rgba(27,28,28,0.08)]"
                         : "border border-[#F1ECE8] shadow-[0_6px_18px_rgba(27,28,28,0.04)]"
@@ -62,18 +62,18 @@ export function Process() {
                     tabIndex={0}
                   >
                     <span
-                      className={`flex h-11 w-11 items-center justify-center rounded-full font-jakarta text-xl font-bold text-white transition-colors duration-300 ${
+                      className={`flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full font-jakarta text-lg sm:text-xl font-bold text-white transition-colors duration-300 ${
                         isActive ? "bg-[var(--soft-blue)]" : "bg-[#102A3B]"
                       }`}
                     >
                       {card.id}
                     </span>
 
-                    <div className="flex flex-col gap-4">
-                      <h3 className="font-jakarta text-[1.1rem] font-bold leading-tight text-[#1A2F3D] xl:text-[1.2rem]">
+                    <div className="flex flex-col gap-3 sm:gap-4">
+                      <h3 className="font-jakarta text-[1rem] sm:text-[1.1rem] font-bold leading-tight text-[#1A2F3D] xl:text-[1.2rem]">
                         {card.title}
                       </h3>
-                      <p className="font-manrope text-[0.95rem] font-light leading-[1.5] text-[#6A514E]">
+                      <p className="font-manrope text-[0.9rem] sm:text-[0.95rem] font-light leading-[1.5] text-[#6A514E]">
                         {card.description}
                       </p>
                     </div>
@@ -82,7 +82,7 @@ export function Process() {
                   {index < cards.length - 1 && (
                     <span
                       aria-hidden="true"
-                      className={`hidden h-[8px] w-[26px] -translate-y-2 xl:block ${
+                      className={`hidden h-[8px] w-[26px] -translate-y-2 lg:block ${
                         connectorIsActive ? "bg-[var(--soft-blue)]" : "bg-[#102A3B]"
                       }`}
                     />

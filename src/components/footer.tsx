@@ -41,19 +41,19 @@ export function Footer() {
 
   return (
     <div className="bg-[var(--soft-white)]">
-      <div className="mx-auto grid gap-8 rounded-t-[2.75rem] border border-[#ECE5E1] bg-white px-8 py-10 shadow-[0_10px_30px_rgba(27,28,28,0.04)] md:grid-cols-[1.2fr_auto_auto] md:items-center md:px-10 md:py-14">
-        <div className="flex flex-col gap-4">
-          <h3 className="font-jakarta text-3xl font-bold text-[var(--foreground)]">
+      <div className="mx-auto grid gap-6 md:gap-8 rounded-t-[2.75rem] border border-[#ECE5E1] bg-white px-6 py-8 md:px-10 md:py-14 shadow-[0_10px_30px_rgba(27,28,28,0.04)] md:grid-cols-[1.2fr_auto_auto] md:items-center">
+        <div className="flex flex-col gap-3 md:gap-4">
+          <h3 className="font-jakarta text-2xl md:text-3xl font-bold text-[var(--foreground)]">
             Indústria Fiu-Fiu
           </h3>
-          <p className="max-w-[540px] font-manrope text-xl font-light leading-[1.45] text-[#7A7E8A]">
+          <p className="max-w-[540px] font-manrope text-base md:text-xl font-light leading-[1.45] text-[#7A7E8A]">
             &copy; 2024 Indústria de Bebidas Fiu-Fiu. Agilidade operacional e confiança em
             cada envase.
           </p>
         </div>
 
-        <nav className="justify-self-center">
-          <ul className="flex flex-wrap items-center gap-x-10 gap-y-4 font-manrope text-xl font-medium text-[#6F7380]">
+        <nav className="justify-self-start md:justify-self-center">
+          <ul className="flex flex-wrap items-center gap-x-6 md:gap-x-10 gap-y-3 md:gap-y-4 font-manrope text-base md:text-xl font-medium text-[#6F7380]">
             <li>
               <a href="https://wa.me/556299800313" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[var(--foreground)]">
                 Contato
@@ -75,7 +75,7 @@ export function Footer() {
               {showEmail && (
                 <>
                   <div className="fixed inset-0 z-40" onClick={() => setShowEmail(false)} />
-                  <div className="absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2 rounded-lg border border-[#ECE5E1] bg-white p-2 shadow-lg">
+                  <div className="absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2 rounded-lg border border-[#ECE5E1] bg-white p-2 shadow-lg min-w-[200px] md:min-w-0">
                     <a
                       href="mailto:claudio@bebidafiufiu.com.br"
                       onClick={() => setShowEmail(false)}

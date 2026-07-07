@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 import Logo from "/Logo.svg";
 
@@ -17,6 +18,7 @@ const NAV_ITEMS = [
 export function Header() {
   const [activeSection, setActiveSection] = useState<string>(NAV_ITEMS[0].id);
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -83,6 +85,7 @@ export function Header() {
   const handleNavigation = (sectionId: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     setActiveSection(sectionId);
+    setMobileMenuOpen(false);
 
     const target = document.getElementById(sectionId);
 
@@ -97,15 +100,15 @@ export function Header() {
   };
 
   return (
-    <header className="bg-white font-manrope fixed w-full top-0 left-0 z-10 grid grid-cols-[auto_1fr_auto] gap-6 items-center py-4 px-8 shadow-md">
+    <header className="bg-white font-manrope fixed w-full top-0 left-0 z-10 grid grid-cols-[1fr_auto] md:grid-cols-[auto_1fr_auto] gap-6 items-center py-4 px-4 md:px-8 shadow-md">
       <div className="flex items-center gap-2">
-        <Image src={Logo} alt="Logo" width={60} height={60} />
-        <span className="font-bold text-2xl">Indústria</span>
+        <Image src={Logo} alt="Logo" width={48} height={48} className="md:w-[60px] md:h-[60px]" />
+        <span className="font-bold text-xl md:text-2xl">Indústria</span>
       </div>
 
       <nav
         ref={navRef}
-        className="animate-nav relative mx-auto flex w-fit items-center gap-2 text-sm font-semibold"
+        className="hidden md:flex animate-nav relative mx-auto w-fit items-center gap-2 text-sm font-semibold"
         onMouseLeave={() => setHoveredSection(null)}
       >
         {NAV_ITEMS.map((item) => (
@@ -125,9 +128,39 @@ export function Header() {
         <span aria-hidden="true" className="nav-indicator" />
       </nav>
 
-      <a href="https://wa.me/556299800313" target="_blank" rel="noopener noreferrer" className="button-1">
+      <a href="https://wa.me/556299800313" target="_blank" rel="noopener noreferrer" className="hidden md:block button-1">
         Falar com o Comercial
       </a>
+
+      <button
+        className="md:hidden flex items-center justify-center p-2 rounded-lg hover:bg-gray-100 transition-colors"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        aria-label="Abrir menu"
+      >
+        {mobileMenuOpen ? <X className="size-7" /> : <Menu className="size-7" />}
+      </button>
+
+      {mobileMenuOpen && (
+        <div className="fixed inset-x-0 top-[73px] bottom-0 bg-white/98 backdrop-blur-sm z-50 flex flex-col items-center gap-6 px-6 py-10 md:hidden overflow-y-auto">
+          <nav className="flex flex-col items-center gap-5 w-full">
+            {NAV_ITEMS.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={handleNavigation(item.id)}
+                className={`text-xl font-semibold font-manrope transition-colors ${
+                  activeSection === item.id ? "text-[var(--blue)]" : "text-[var(--dark-blue)]"
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <a href="https://wa.me/556299800313" target="_blank" rel="noopener noreferrer" className="button-1 mt-4 text-center w-full max-w-xs">
+            Falar com o Comercial
+          </a>
+        </div>
+      )}
     </header>
   );
 }
